@@ -1,20 +1,20 @@
 describe "GIT" do
 # describe "STAGING AND COMMITTING CHANGES:" do
   it "1. What is the syntax for staging a change in index.html if it is in the root dir?" do
-    answer = "?"
+    answer = "git add index.html"
     encoded_answer = "bf338924ddc9ff4eb0c685a794960e0c4ffade2c"
     expect(encode(answer)).to eq(encoded_answer)
   end
 
   it "2. What is the syntax for staging all files, including new, modified, and deleted files?" do
-    answer = "?"
+    answer = "git add ."
     encoded_answers = ["e3ed0db138a439522bc6f0a56c71b2c90e3443db", "d43b64f144ca0689fea30adb6e5cb2150c971a0c", "1a1c76a81d0981b7fe181d7869d1ede4d1a2a24f"]
     expect(encode(answer)).to satisfy { |answer| encoded_answers.include?(answer) }
   end
 
   it "3. What is the syntax for committing all staged changes with the message 
       'update link styles'?" do
-    answer = "?"
+    answer = "git commit -m 'update link styles'"
     encoded_answer = "8d06e2760cda4755f387db0db0e6c425b2ece976"
     expect(encode(answer)).to eq(encoded_answer)
   end
@@ -30,7 +30,7 @@ describe "GIT" do
 # describe "PUSHING:" do
   it "5. From the master branch, what is the syntax for pushing the master branch 
       to the remote master branch where the remote is called 'origin'?" do
-    answer = "?"
+    answer = "git push origin master"
     encoded_answer = "6c8e01a0360da3cf6e314c69c453957b70ab1b4e"
     expect(encode(answer)).to eq(encoded_answer)
   end
@@ -38,7 +38,7 @@ describe "GIT" do
   it "6. From the feature branch 'add-links', what is the syntax for creating a 
       remote add-links branch with all of the local branch's content? 
       (remote is still called 'origin')" do
-    answer = "?"
+    answer = "git push origin add-links"
     encoded_answer = "07476403b56e1437e855a5d7031b3abc0b97de5a"
     expect(encode(answer)).to eq(encoded_answer)
   end
@@ -238,7 +238,7 @@ describe "GIT" do
 
   it "31. If index.html is being tracked and you modify and stage the change,
       what color will it be if you run 'git status'?" do
-    answer = "?"
+    answer = "red"
     encoded_answer = "bc74f4f071a5a33f00ab88a6d6385b5e6638b86c"
     expect(encode(answer)).to eq(encoded_answer)
   end
